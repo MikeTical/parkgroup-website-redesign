@@ -5,7 +5,7 @@ import { siteConfig } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Learn more about Park Group of Companies, serving Hamilton, Dundas, Ancaster, Burlington, Stoney Creek, and surrounding areas with HVAC, plumbing, gas, and commercial mechanical services.'
+    'Learn more about Park Group of Companies, serving Hamilton, Dundas, Ancaster, Burlington, Stoney Creek, and surrounding areas with HVAC, gas, and commercial mechanical services.'
 };
 
 export default function AboutPage() {
@@ -15,7 +15,7 @@ export default function AboutPage() {
         <SectionIntro
           eyebrow="About Park Group"
           title="A dependable mechanical service company for residential and commercial clients"
-          description="Park Group of Companies supports customers across the Hamilton area with HVAC, plumbing, gas, and commercial mechanical services. The goal of this page is to clearly communicate experience, capabilities, and the kind of service customers can expect when they reach out."
+          description="Park Group of Companies supports customers across the Hamilton area with HVAC, gas, and commercial mechanical services. The goal of this page is to clearly communicate experience, capabilities, and the kind of service customers can expect when they reach out."
         />
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -24,7 +24,7 @@ export default function AboutPage() {
             <p className="mt-4 text-sm leading-7 text-slate-600">
               Park Group is positioned as a trusted local service company focused on quality workmanship,
               responsive communication, and practical solutions for both everyday service needs and more
-              complex mechanical requirements. Whether the job involves heating, cooling, plumbing, gas,
+              complex mechanical requirements. Whether the job involves heating, cooling, gas,
               or commercial equipment, customers want to know they are working with a team that values
               reliability and professionalism.
             </p>
@@ -39,7 +39,7 @@ export default function AboutPage() {
             <p className="mt-4 text-sm leading-7 text-slate-600">
               Park Group serves customers in {siteConfig.serviceAreas.join(', ')} and nearby communities.
               The business supports residential service calls, commercial properties, and broader mechanical
-              requirements where dependable HVAC, plumbing, and gas expertise are essential.
+              requirements where dependable HVAC and gas expertise are essential.
             </p>
 
             <div className="mt-6 rounded-2xl bg-slate-50 p-5">
@@ -57,7 +57,7 @@ export default function AboutPage() {
           <div className="card p-6">
             <h3 className="text-xl font-bold text-slate-900">Residential service</h3>
             <p className="mt-3 text-sm leading-7 text-slate-600">
-              Support for homeowners who need dependable help with heating, cooling, plumbing, gas, and
+              Support for homeowners who need dependable help with heating, cooling, gas, and
               maintenance-related work.
             </p>
           </div>

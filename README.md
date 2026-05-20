@@ -11,7 +11,7 @@ The current website has a number of issues that make a redesign worthwhile:
 - service content is present but thin and inconsistently structured
 - the contact page is minimal
 - spelling and polish issues weaken trust
-- the site has limited on-page SEO structure for HVAC and plumbing searches
+- the site has limited on-page SEO structure for HVAC searches
 
 ## Recommended stack
 
@@ -79,7 +79,6 @@ Core pages to keep:
 - Home
 - About
 - HVAC Services
-- Plumbing Services
 - Commercial / Industrial Services
 - Contact
 - Privacy Policy

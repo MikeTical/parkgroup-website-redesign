@@ -5,7 +5,7 @@ import { SectionIntro } from '@/components/SectionIntro';
 export const metadata: Metadata = {
   title: 'Commercial & Industrial Services',
   description:
-    'Park Group of Companies provides commercial and industrial HVAC, plumbing, gas, radiant heating, rooftop equipment, and mechanical service support for buildings, facilities, and larger environments.'
+    'Park Group of Companies provides commercial and industrial HVAC, gas, radiant heating, rooftop equipment, and mechanical service support for buildings, facilities, and larger environments.'
 };
 
 const capabilities = [
@@ -13,7 +13,7 @@ const capabilities = [
   'Industrial heating and mechanical system support',
   'Radiant heating systems',
   'Rooftop units and larger equipment servicing',
-  'Commercial plumbing and gas-related work',
+  'Commercial gas-related work',
   'Preventative maintenance and ongoing service support'
 ];
 
@@ -24,7 +24,7 @@ export default function CommercialPage() {
         <SectionIntro
           eyebrow="Commercial & Industrial Services"
           title="Mechanical service support for facilities, buildings, and larger operating environments"
-          description="Park Group provides commercial and industrial support for customers who need dependable HVAC, plumbing, gas, radiant heating, and broader mechanical service capability. This page should clearly separate larger-scale service needs from residential work and show that Park Group can support demanding environments with practical, reliable solutions."
+          description="Park Group provides commercial and industrial support for customers who need dependable HVAC, gas, radiant heating, and broader mechanical service capability. This page should clearly separate larger-scale service needs from residential work and show that Park Group can support demanding environments with practical, reliable solutions."
         />
 
         <div className="mt-10 grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
@@ -83,7 +83,7 @@ export default function CommercialPage() {
           <div className="card p-6">
             <h3 className="text-xl font-bold text-slate-900">Equipment Expertise</h3>
             <p className="mt-3 text-sm leading-7 text-slate-600">
-              Support for larger HVAC, radiant, plumbing, gas, and facility-related mechanical systems.
+              Support for larger HVAC, radiant, gas, and facility-related mechanical systems.
             </p>
           </div>
 

@@ -18,7 +18,7 @@ export function Footer() {
           </div>
 
           <p className="mt-4 max-w-md text-sm leading-7 text-slate-600">
-            Park Group of Companies provides dependable HVAC, plumbing, gas, and mechanical service
+            Park Group of Companies provides dependable HVAC, gas, and mechanical service
             support for residential, commercial, and industrial clients across the Hamilton area.
           </p>
         </div>
@@ -40,6 +40,24 @@ export function Footer() {
                 {siteConfig.email}
               </a>
             </p>
+            <div className="mt-4 flex flex-wrap gap-3 text-sm">
+              <a
+                href="https://www.instagram.com/parkgroupofcompanies?igsh=MTZ5cm13YnY1c3ZnZA=="
+                target="_blank"
+                rel="noreferrer"
+                className="transition hover:text-slate-900"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://www.facebook.com/share/1B1SgaQ3So/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noreferrer"
+                className="transition hover:text-slate-900"
+              >
+                Facebook
+              </a>
+            </div>
           </div>
         </div>
 
@@ -51,9 +69,6 @@ export function Footer() {
             </Link>
             <Link className="transition hover:text-slate-900" href="/services/hvac">
               HVAC
-            </Link>
-            <Link className="transition hover:text-slate-900" href="/services/plumbing">
-              Plumbing
             </Link>
             <Link className="transition hover:text-slate-900" href="/services/commercial">
               Commercial / Industrial

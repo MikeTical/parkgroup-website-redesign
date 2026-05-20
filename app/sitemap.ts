@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next';
 const baseUrl = 'https://www.parkgroupofcompanies.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ['', '/about', '/contact', '/services/hvac', '/services/plumbing', '/services/commercial', '/privacy-policy'];
+  const routes = ['', '/about', '/contact', '/services/hvac', '/services/commercial', '/privacy-policy'];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,

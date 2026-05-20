@@ -6,7 +6,7 @@ import { siteConfig } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Contact Park Group of Companies for HVAC, plumbing, gas, and commercial mechanical service in Hamilton, Dundas, Ancaster, Burlington, Stoney Creek, and surrounding areas.'
+    'Contact Park Group of Companies for HVAC, gas, and commercial mechanical service in Hamilton, Dundas, Ancaster, Burlington, Stoney Creek, and surrounding areas.'
 };
 
 export default function ContactPage() {
@@ -17,7 +17,7 @@ export default function ContactPage() {
           <SectionIntro
             eyebrow="Contact Park Group"
             title="Request service, ask a question, or get in touch with our team"
-            description="Whether you need HVAC, plumbing, gas, or commercial mechanical support, Park Group is here to help. Use the form on this page or contact us directly by phone or email."
+            description="Whether you need HVAC, gas, or commercial mechanical support, Park Group is here to help. Use the form on this page or contact us directly by phone or email."
           />
 
           <div className="mt-8 card p-6 text-sm leading-7 text-slate-600">

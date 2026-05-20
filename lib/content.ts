@@ -6,12 +6,6 @@ export const services = [
       'Heating, cooling, ventilation, furnaces, boilers, air conditioning, heat pumps, ductless systems, repairs, replacements, and preventative maintenance for residential and commercial properties.'
   },
   {
-    title: 'Plumbing',
-    href: '/services/plumbing',
-    description:
-      'Reliable plumbing services for homes and businesses, including repairs, installations, fixtures, piping, pumps, water treatment solutions, and ongoing maintenance support.'
-  },
-  {
     title: 'Commercial & Industrial',
     href: '/services/commercial',
     description:
@@ -21,7 +15,7 @@ export const services = [
 
 export const trustPoints = [
   'Serving residential, commercial, and industrial clients',
-  'Experienced in HVAC, plumbing, gas, and mechanical service support',
+  'Experienced in HVAC, gas, and mechanical service support',
   'Responsive help for repairs, installations, and maintenance',
   'Focused on quality workmanship, reliability, and customer service'
 ];

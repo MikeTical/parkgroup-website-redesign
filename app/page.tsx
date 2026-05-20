@@ -4,7 +4,7 @@ import { ServiceCards } from '@/components/ServiceCards';
 import { siteConfig } from '@/lib/site';
 
 const reasons = [
-  'Experienced HVAC, plumbing, and gas service support',
+  'Experienced HVAC, gas, and mechanical service support',
   'Residential, commercial, and light industrial solutions',
   'Fast response and straightforward communication',
   'Preventative maintenance, repairs, and installations',
@@ -21,16 +21,16 @@ export default function HomePage() {
         <div className="container grid gap-12 py-20 md:grid-cols-[1.15fr_0.85fr] md:py-28">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-400">
-              HVAC • Plumbing • Gas • Commercial Service
+              HVAC • Gas • Commercial Service
             </p>
 
             <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight md:text-6xl">
-              Reliable HVAC and plumbing solutions for homes and businesses across the Hamilton area.
+              Reliable HVAC and gas solutions for homes and businesses across the Hamilton area.
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
               Park Group helps residential and commercial customers with dependable heating, cooling,
-              plumbing, gas, and mechanical service support. The new website is built to make it easier
+              gas, and mechanical service support. The new website is built to make it easier
               for customers to understand your services, get in touch quickly, and trust the quality of
               your work from the first visit.
             </p>
@@ -92,7 +92,7 @@ export default function HomePage() {
           <SectionIntro
             eyebrow="Core services"
             title="Clear service paths for homeowners, businesses, and property managers"
-            description="The homepage should quickly show what Park Group does and where to go next. These service sections give visitors a clearer route to HVAC, plumbing, gas, and commercial information."
+            description="The homepage should quickly show what Park Group does and where to go next. These service sections give visitors a clearer route to HVAC, gas, and commercial information."
           />
           <ServiceCards />
         </div>
@@ -105,7 +105,7 @@ export default function HomePage() {
             <h2 className="mt-3 text-2xl font-bold">Support for everyday service needs and larger mechanical requirements</h2>
             <p className="mt-4 text-slate-600">
               The redesigned site should make it clear that Park Group can support both homeowners and commercial
-              clients. That includes repair work, system replacements, plumbing issues, gas-related service, and
+              clients. That includes repair work, system replacements, gas-related service, and
               ongoing maintenance requirements.
             </p>
           </div>
@@ -136,7 +136,7 @@ export default function HomePage() {
             {serviceAreas.map((area) => (
               <div key={area} className="card p-5">
                 <p className="font-semibold text-slate-900">{area}</p>
-                <p className="mt-2 text-sm text-slate-600">HVAC, plumbing, gas, and commercial service support.</p>
+                <p className="mt-2 text-sm text-slate-600">HVAC, gas, and commercial service support.</p>
               </div>
             ))}
           </div>
@@ -149,7 +149,7 @@ export default function HomePage() {
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-400">Get started</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-                Need HVAC or plumbing service from a team you can rely on?
+                Need HVAC or gas service from a team you can rely on?
               </h2>
               <p className="mt-4 max-w-2xl text-slate-300">
                 Use the contact page to request service, ask for a quote, or connect with Park Group about your

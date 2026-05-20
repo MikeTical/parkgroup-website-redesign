@@ -83,11 +83,10 @@ export function ContactForm() {
           >
             <option>Heating / HVAC</option>
             <option>Air Conditioning</option>
-            <option>Plumbing</option>
             <option>Gas Services</option>
             <option>Commercial / Industrial</option>
             <option>Maintenance / Service Agreement</option>
-            <option>Other</option>
+            <option>Other</option
           </select>
         </label>
       </div>

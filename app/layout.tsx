@@ -8,16 +8,14 @@ import { siteConfig } from '@/lib/site';
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Park Group of Companies | HVAC, Plumbing & Gas Services',
+    default: 'Park Group of Companies | HVAC, Gas & Commercial Mechanical Services',
     template: '%s | Park Group of Companies'
   },
   description:
-    'Park Group of Companies provides residential, commercial, and industrial HVAC, plumbing, gas, and mechanical services in Dundas, Hamilton, Ancaster, Burlington, Stoney Creek, and surrounding areas.',
+    'Park Group of Companies provides residential, commercial, and industrial HVAC, gas, and mechanical services in Dundas, Hamilton, Ancaster, Burlington, Stoney Creek, and surrounding areas.',
   keywords: [
     'HVAC Dundas',
     'HVAC Hamilton',
-    'plumbing Dundas',
-    'plumbing Hamilton',
     'gas fitting Dundas',
     'commercial HVAC Hamilton',
     'industrial heating Hamilton',
@@ -27,9 +25,9 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   openGraph: {
-    title: 'Park Group of Companies | HVAC, Plumbing & Gas Services',
+    title: 'Park Group of Companies | HVAC, Gas & Commercial Mechanical Services',
     description:
-      'Trusted HVAC, plumbing, gas, and commercial mechanical services for residential and business customers in Dundas, Hamilton, and surrounding areas.',
+      'Trusted HVAC, gas, and commercial mechanical services for residential and business customers in Dundas, Hamilton, and surrounding areas.',
     url: siteConfig.url,
     siteName: siteConfig.name,
     locale: 'en_CA',
@@ -37,9 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Park Group of Companies | HVAC, Plumbing & Gas Services',
+    title: 'Park Group of Companies | HVAC, Gas & Commercial Mechanical Services',
     description:
-      'Residential, commercial, and industrial HVAC, plumbing, gas, and mechanical services in Dundas, Hamilton, and surrounding areas.'
+      'Residential, commercial, and industrial HVAC, gas, and mechanical services in Dundas, Hamilton, and surrounding areas.'
   }
 };
 
