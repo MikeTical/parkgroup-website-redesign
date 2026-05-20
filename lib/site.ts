@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: 'Park Group',
   url: 'https://www.parkgroupofcompanies.com',
   phone: '905-572-7275',
-  phoneDisplay: '(905) 572-PARK',
+  phoneDisplay: '(905) 572-PARK (7275)',
   email: 'contact@parkgroupofcompanies.com',
   address: {
     streetAddress: '101 Valley Road',
