@@ -86,7 +86,7 @@ export function ContactForm() {
             <option>Gas Services</option>
             <option>Commercial / Industrial</option>
             <option>Maintenance / Service Agreement</option>
-            <option>Other</option
+            <option>Other</option>
           </select>
         </label>
       </div>
