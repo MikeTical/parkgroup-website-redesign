@@ -21,7 +21,7 @@ export default function HomePage() {
         <div className="container grid gap-12 py-20 md:grid-cols-[1.15fr_0.85fr] md:py-28">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-400">
-              HVAC • Gas • Commercial Service
+              HVAC • Gas • Residential Service • Commercial Service
             </p>
 
             <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight md:text-6xl">
