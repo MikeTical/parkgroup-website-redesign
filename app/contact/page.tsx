@@ -62,15 +62,23 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="card p-6">
-              <div className="mb-4 h-1.5 w-10 rounded-full bg-amber-500" />
-              <h2 className="text-lg font-bold text-slate-900">What to include</h2>
-              <ul className="mt-4 grid gap-2 text-sm leading-7 text-slate-600">
-                <li>• The type of service you need</li>
-                <li>• Your location or service address</li>
-                <li>• A short description of the issue or project</li>
-                <li>• The best way to reach you</li>
-              </ul>
+            <div className="rounded-2xl bg-slate-900 p-5">
+              <p className="text-xs font-bold uppercase tracking-[0.15em] text-amber-400">What to include</p>
+              <div className="mt-3 grid gap-3">
+                {[
+                  'The type of service you need',
+                  'Your location or service address',
+                  'A short description of the issue or project',
+                  'The best way to reach you',
+                ].map((item, index) => (
+                  <div key={item} className="flex gap-4 rounded-2xl border border-sky-400/30 bg-gradient-to-br from-sky-300 to-sky-700 p-4">
+                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-500 text-xs font-bold text-slate-900">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <p className="text-sm leading-7 text-white">{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="rounded-2xl bg-slate-900 p-6 text-white">

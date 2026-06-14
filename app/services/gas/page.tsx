@@ -92,7 +92,7 @@ export default function GasPage() {
               <div key={item.title} className="card p-6">
                 <div className="mb-4 h-1.5 w-10 rounded-full bg-amber-500" />
                 <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                <p className="mt-3 text-sm leading-7 text-white">{item.description}</p>
               </div>
             ))}
           </div>
@@ -115,11 +115,11 @@ export default function GasPage() {
           <div className="rounded-3xl bg-slate-900 p-6 md:p-8">
             <div className="grid gap-3 sm:grid-cols-2">
               {commonNeeds.map((item, index) => (
-                <div key={item} className="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div key={item} className="flex gap-4 rounded-2xl border border-sky-400/30 bg-gradient-to-br from-sky-300 to-sky-700 p-5">
                   <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-500 text-xs font-bold text-slate-900">
                     {String(index + 1).padStart(2, '0')}
                   </span>
-                  <p className="text-sm leading-7 text-slate-300">{item}</p>
+                  <p className="text-sm leading-7 text-white">{item}</p>
                 </div>
               ))}
             </div>
