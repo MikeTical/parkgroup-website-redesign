@@ -121,12 +121,14 @@ export function ContactForm() {
         </p>
       </div>
 
-      <div>
-        <p className="text-sm font-medium text-slate-700">
-          What equipment can we help you with?{' '}
-          <span className="font-normal text-slate-500">Select all that apply.</span>
+      <div className="rounded-2xl bg-slate-50 p-5">
+        <p className="text-xs font-bold uppercase tracking-[0.15em] text-amber-600">Step 1</p>
+        <p className="mt-1 text-base font-semibold text-slate-900">
+          What equipment can we help you with?
         </p>
-        <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        <p className="mt-0.5 text-sm text-slate-500">Select all that apply.</p>
+
+        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {PRODUCTS.map((product) => {
             const selected = selectedProducts.includes(product.id);
             return (
@@ -134,29 +136,64 @@ export function ContactForm() {
                 key={product.id}
                 type="button"
                 onClick={() => toggleProduct(product.id)}
-                className={`relative flex flex-col items-center gap-2.5 rounded-xl border-2 px-3 py-4 text-center text-sm font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+                className={`group relative flex flex-col items-center gap-3 rounded-2xl border-2 px-3 py-5 text-center transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
                   selected
-                    ? 'border-amber-500 bg-amber-50 text-amber-700'
-                    : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:bg-slate-50'
+                    ? 'border-amber-500 bg-white shadow-md shadow-amber-100'
+                    : 'border-slate-200 bg-white hover:border-amber-300 hover:shadow-sm'
                 }`}
               >
-                {selected && (
-                  <span className="absolute right-2 top-2">
-                    <svg className="h-4 w-4 text-amber-500" viewBox="0 0 24 24" fill="currentColor">
-                      <path
-                        fillRule="evenodd"
-                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-                        clipRule="evenodd"
-                      />
+                {/* Check indicator */}
+                <span
+                  className={`absolute right-2.5 top-2.5 flex h-5 w-5 items-center justify-center rounded-full border-2 transition-all duration-150 ${
+                    selected
+                      ? 'border-amber-500 bg-amber-500'
+                      : 'border-slate-300 bg-white group-hover:border-amber-300'
+                  }`}
+                >
+                  {selected && (
+                    <svg className="h-3 w-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 13l4 4L19 7" />
                     </svg>
-                  </span>
-                )}
-                <ProductIcon id={product.id} />
-                <span className="leading-tight">{product.label}</span>
+                  )}
+                </span>
+
+                {/* Icon container */}
+                <span
+                  className={`flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-150 ${
+                    selected
+                      ? 'bg-amber-100 text-amber-600'
+                      : 'bg-slate-100 text-slate-500 group-hover:bg-amber-50 group-hover:text-amber-500'
+                  }`}
+                >
+                  <ProductIcon id={product.id} />
+                </span>
+
+                <span
+                  className={`text-xs font-semibold leading-tight transition-colors duration-150 ${
+                    selected ? 'text-amber-700' : 'text-slate-700'
+                  }`}
+                >
+                  {product.label}
+                </span>
               </button>
             );
           })}
         </div>
+
+        {selectedProducts.length > 0 && (
+          <p className="mt-3 text-xs text-slate-500">
+            Selected:{' '}
+            <span className="font-medium text-amber-700">
+              {selectedProducts.map((id) => PRODUCTS.find((p) => p.id === id)?.label).join(', ')}
+            </span>
+          </p>
+        )}
+      </div>
+
+      <div className="flex items-center gap-3 text-slate-300">
+        <div className="h-px flex-1 bg-slate-200" />
+        <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-400">Step 2 — Your details</p>
+        <div className="h-px flex-1 bg-slate-200" />
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
