@@ -12,7 +12,6 @@ const reasons = [
   'Clear contact options for service calls and quote requests',
 ];
 
-const serviceAreas = ['Hamilton', 'Ancaster', 'Dundas', 'Stoney Creek', 'Binbrook', 'Burlington'];
 
 export default function HomePage() {
   return (
@@ -140,23 +139,12 @@ export default function HomePage() {
       </section>
 
       <section className="section">
-        <div className="container grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Service area</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight">Proudly serving Hamilton and surrounding communities</h2>
-            <p className="mt-4 max-w-xl text-slate-600">
-              Local visibility matters. Adding service-area content helps customers quickly confirm they are in your
-              coverage area and creates a stronger local SEO foundation for Google search.
-            </p>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {serviceAreas.map((area) => (
-              <div key={area} className="card p-5">
-                <p className="font-semibold text-slate-900">{area}</p>
-              </div>
-            ))}
-          </div>
+        <div className="container">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Service area</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight">Proudly serving Hamilton and surrounding communities</h2>
+          <p className="mt-4 max-w-xl text-slate-600">
+            Park Group serves customers in Hamilton, Ancaster, Dundas, Stoney Creek, Binbrook, Burlington, and surrounding communities.
+          </p>
         </div>
       </section>
 
