@@ -27,5 +27,7 @@ export const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/services/hvac', label: 'HVAC' },
-  { href: '/services/commercial', label: 'Commercial / Industrial' }
+  { href: '/services/gas', label: 'Gas' },
+  { href: '/services/residential', label: 'Residential' },
+  { href: '/services/commercial', label: 'Commercial' },
 ];

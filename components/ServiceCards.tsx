@@ -3,7 +3,7 @@ import { services } from '@/lib/content';
 
 export function ServiceCards() {
   return (
-    <div className="mt-10 grid gap-6 md:grid-cols-3">
+    <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
       {services.map((service) => (
         <div
           key={service.href}
