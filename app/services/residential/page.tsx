@@ -10,27 +10,27 @@ export const metadata: Metadata = {
 const serviceItems = [
   {
     title: 'Furnace Service & Replacement',
-    description: 'Repairs, tune-ups, and full replacements for gas and electric furnaces, including seasonal maintenance to keep systems running efficiently.'
+    description: 'Annual tune-ups, emergency repairs, and full system replacements for gas and electric furnaces. We work with all major brands and help guide equipment selection when it is time for an upgrade.'
   },
   {
     title: 'Air Conditioning',
-    description: 'Central A/C repairs, installations, and annual tune-ups to keep your home cool and comfortable through warmer months.'
+    description: 'Central air conditioning installation, seasonal maintenance, refrigerant checks, and emergency repairs to keep your home cool and comfortable all summer long.'
   },
   {
     title: 'Boilers & Radiant Heat',
-    description: 'Service and installation of residential boiler systems and in-floor radiant heating for reliable, even warmth throughout the home.'
+    description: 'Boiler repairs, replacements, and new in-floor radiant heating installations for consistent, even warmth without the noise, dust, or dry air of forced-air systems.'
   },
   {
     title: 'Hot Water Tanks & Tankless',
-    description: 'Traditional water heater repairs and replacements, plus tankless system installations for on-demand hot water efficiency.'
+    description: 'Water heater repairs and replacements — traditional tank units and on-demand tankless systems — for reliable hot water and improved energy efficiency throughout your home.'
   },
   {
     title: 'Heat Pumps',
-    description: 'Heat pump installation and service for year-round heating and cooling comfort with improved energy efficiency.'
+    description: 'Heat pump installation, service, and seasonal maintenance for year-round home comfort from a single, energy-efficient system that handles both heating and cooling.'
   },
   {
     title: 'HRVs & Indoor Air Quality',
-    description: 'Heat recovery ventilator installation and maintenance to improve fresh air circulation and indoor air quality in your home.'
+    description: 'Heat recovery ventilator installation, cleaning, and service to bring fresh outdoor air into your home year-round while retaining indoor warmth and reducing stuffiness.'
   }
 ];
 
@@ -92,7 +92,7 @@ export default function ResidentialPage() {
               <div key={item.title} className="card p-6">
                 <div className="mb-4 h-1.5 w-10 rounded-full bg-amber-500" />
                 <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-white">{item.description}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
               </div>
             ))}
           </div>

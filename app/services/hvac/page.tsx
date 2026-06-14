@@ -10,27 +10,27 @@ export const metadata: Metadata = {
 const serviceItems = [
   {
     title: 'Heating Systems',
-    description: 'Furnaces, boilers, and heat pumps serviced with a focus on reliable comfort and seasonal performance.'
+    description: 'Furnaces, boilers, and heat pumps for residential and commercial properties. We handle repairs, emergency calls, seasonal tune-ups, and full replacements to keep your heating running reliably year-round.'
   },
   {
     title: 'Air Conditioning',
-    description: 'Cooling repairs, tune-ups, and replacements to keep spaces comfortable during warmer months.'
+    description: 'Central A/C, ductless units, and heat pump cooling — including seasonal tune-ups, refrigerant checks, repairs, and complete system replacements when your unit has reached end of life.'
   },
   {
     title: 'Ductless & Heat Pumps',
-    description: 'Flexible options for areas that need efficient heating and cooling without traditional ductwork.'
+    description: 'Mini-split and multi-zone ductless systems for homes and businesses that need flexible, energy-efficient heating and cooling without the need for traditional ductwork.'
   },
   {
     title: 'Ventilation & Air Quality',
-    description: 'Airflow, filtration, and humidity solutions that help improve indoor comfort and air quality.'
+    description: 'HRV installation and service, duct inspections, and airflow balancing to ensure fresh, well-circulated air and improved indoor comfort throughout your home or building.'
   },
   {
     title: 'Commercial HVAC Equipment',
-    description: 'Service for rooftop units and larger equipment used in commercial and light industrial settings.'
+    description: 'Service and maintenance for rooftop units, make-up air systems, and larger commercial HVAC equipment across offices, warehouses, and light industrial environments.'
   },
   {
     title: 'Maintenance & System Upgrades',
-    description: 'Planned maintenance and equipment upgrades to help reduce breakdowns and extend system life.'
+    description: 'Seasonal inspection and tune-up programs, filter service, and planned upgrades to extend system life, improve efficiency, and reduce the risk of unexpected breakdowns.'
   }
 ];
 
@@ -92,7 +92,7 @@ export default function HVACPage() {
               <div key={item.title} className="card p-6">
                 <div className="mb-4 h-1.5 w-10 rounded-full bg-amber-500" />
                 <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-white">{item.description}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
               </div>
             ))}
           </div>

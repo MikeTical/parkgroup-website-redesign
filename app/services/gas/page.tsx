@@ -10,27 +10,27 @@ export const metadata: Metadata = {
 const serviceItems = [
   {
     title: 'Gas Line Installation',
-    description: 'New gas line runs for appliances, equipment, or building additions, installed to code by licensed gas fitters.'
+    description: 'New gas line runs for appliances, generators, outdoor BBQs, pool heaters, and building additions — installed to code by licensed gas fitters with permits where required.'
   },
   {
     title: 'Gas Line Repair',
-    description: 'Diagnosis and repair of gas leaks, damaged lines, or supply issues to restore safe and reliable operation.'
+    description: 'Diagnosis and repair of gas leaks, corroded or damaged lines, faulty fittings, and pressure issues to restore safe, reliable operation as quickly as possible.'
   },
   {
     title: 'Appliance Connections',
-    description: 'Safe connection of gas appliances including furnaces, boilers, water heaters, stoves, fireplaces, and BBQ lines.'
+    description: 'Code-compliant connection of furnaces, boilers, water heaters, ranges, fireplaces, dryers, outdoor BBQ lines, and other gas-powered residential and commercial equipment.'
   },
   {
     title: 'Gas Pressure Testing',
-    description: 'Pressure testing and leak checks to ensure the integrity of gas systems before and after service work.'
+    description: 'Full system pressure testing and leak verification to confirm gas line integrity before occupancy, after service work, or as part of a pre-sale or insurance inspection.'
   },
   {
     title: 'Pool Heater Gas Lines',
-    description: 'Gas supply installation for pool and spa heaters, including new lines and connections to existing systems.'
+    description: 'Dedicated gas supply lines for pool heaters, spa systems, and hot tubs — including new installations and connections to existing residential or commercial gas systems.'
   },
   {
     title: 'Commercial Gas Work',
-    description: 'Gas fitting and line work for commercial kitchens, facilities, and industrial environments requiring larger supply capacity.'
+    description: 'Gas fitting, line installation, and repairs for restaurants, commercial kitchens, and industrial facilities with higher-capacity supply and code-compliance requirements.'
   }
 ];
 
@@ -92,7 +92,7 @@ export default function GasPage() {
               <div key={item.title} className="card p-6">
                 <div className="mb-4 h-1.5 w-10 rounded-full bg-amber-500" />
                 <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-white">{item.description}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
               </div>
             ))}
           </div>
