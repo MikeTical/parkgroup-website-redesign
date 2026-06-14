@@ -121,12 +121,12 @@ export function ContactForm() {
         </p>
       </div>
 
-      <div className="rounded-2xl bg-slate-50 p-5">
-        <p className="text-xs font-bold uppercase tracking-[0.15em] text-amber-600">Step 1</p>
-        <p className="mt-1 text-base font-semibold text-slate-900">
+      <div className="rounded-2xl bg-slate-900 p-5">
+        <p className="text-xs font-bold uppercase tracking-[0.15em] text-amber-400">Step 1</p>
+        <p className="mt-1 text-base font-semibold text-white">
           What equipment can we help you with?
         </p>
-        <p className="mt-0.5 text-sm text-slate-500">Select all that apply.</p>
+        <p className="mt-0.5 text-sm text-slate-400">Select all that apply.</p>
 
         <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {PRODUCTS.map((product) => {
@@ -136,18 +136,18 @@ export function ContactForm() {
                 key={product.id}
                 type="button"
                 onClick={() => toggleProduct(product.id)}
-                className={`group relative flex flex-col items-center gap-3 rounded-2xl border-2 px-3 py-5 text-center transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+                className={`group relative flex flex-col items-center gap-3 rounded-2xl px-3 py-5 text-center transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${
                   selected
-                    ? 'border-amber-500 bg-white shadow-md shadow-amber-100'
-                    : 'border-slate-200 bg-white hover:border-amber-300 hover:shadow-sm'
+                    ? 'bg-amber-500 shadow-lg shadow-amber-500/30'
+                    : 'bg-[#0f3b73] shadow-md shadow-black/20 hover:bg-[#164494] hover:shadow-lg'
                 }`}
               >
                 {/* Check indicator */}
                 <span
                   className={`absolute right-2.5 top-2.5 flex h-5 w-5 items-center justify-center rounded-full border-2 transition-all duration-150 ${
                     selected
-                      ? 'border-amber-500 bg-amber-500'
-                      : 'border-slate-300 bg-white group-hover:border-amber-300'
+                      ? 'border-slate-900 bg-slate-900'
+                      : 'border-white/30 bg-transparent'
                   }`}
                 >
                   {selected && (
@@ -161,8 +161,8 @@ export function ContactForm() {
                 <span
                   className={`flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-150 ${
                     selected
-                      ? 'bg-amber-100 text-amber-600'
-                      : 'bg-slate-100 text-slate-500 group-hover:bg-amber-50 group-hover:text-amber-500'
+                      ? 'bg-slate-900/15 text-slate-900'
+                      : 'bg-white/10 text-white'
                   }`}
                 >
                   <ProductIcon id={product.id} />
@@ -170,7 +170,7 @@ export function ContactForm() {
 
                 <span
                   className={`text-xs font-semibold leading-tight transition-colors duration-150 ${
-                    selected ? 'text-amber-700' : 'text-slate-700'
+                    selected ? 'text-slate-900' : 'text-white'
                   }`}
                 >
                   {product.label}
@@ -181,16 +181,16 @@ export function ContactForm() {
         </div>
 
         {selectedProducts.length > 0 && (
-          <p className="mt-3 text-xs text-slate-500">
+          <p className="mt-3 text-xs text-slate-400">
             Selected:{' '}
-            <span className="font-medium text-amber-700">
+            <span className="font-medium text-amber-400">
               {selectedProducts.map((id) => PRODUCTS.find((p) => p.id === id)?.label).join(', ')}
             </span>
           </p>
         )}
       </div>
 
-      <div className="flex items-center gap-3 text-slate-300">
+      <div className="flex items-center gap-3">
         <div className="h-px flex-1 bg-slate-200" />
         <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-400">Step 2 — Your details</p>
         <div className="h-px flex-1 bg-slate-200" />
