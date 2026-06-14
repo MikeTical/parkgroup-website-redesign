@@ -112,11 +112,14 @@ export default function ResidentialPage() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
-            <div className="divide-y divide-slate-200">
-              {commonNeeds.map((item) => (
-                <div key={item} className="py-4 first:pt-0 last:pb-0">
-                  <p className="text-base leading-7 text-slate-700">{item}</p>
+          <div className="rounded-3xl bg-slate-900 p-6 md:p-8">
+            <div className="grid gap-3 sm:grid-cols-2">
+              {commonNeeds.map((item, index) => (
+                <div key={item} className="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-5">
+                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-500 text-xs font-bold text-slate-900">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <p className="text-sm leading-7 text-slate-300">{item}</p>
                 </div>
               ))}
             </div>
