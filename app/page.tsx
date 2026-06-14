@@ -28,10 +28,9 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-              Park Group helps residential and commercial customers with dependable heating, cooling,
-              gas, and mechanical service support. The new website is built to make it easier
-              for customers to understand your services, get in touch quickly, and trust the quality of
-              your work from the first visit.
+              Park Group provides dependable heating, cooling, gas, and mechanical service for homes
+              and businesses across the Hamilton area. Whether you need a repair, a seasonal tune-up,
+              a new installation, or a quote — we&apos;re here to help.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -92,7 +91,7 @@ export default function HomePage() {
             <div className="mt-8 rounded-2xl bg-slate-100 p-5">
               <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Need service now?</p>
               <p className="mt-2 text-sm leading-7 text-slate-600">
-                Make it simple for customers to call, request a quote, or send a service inquiry from any device.
+                Call us directly or use the contact form to request service, get a quote, or ask a question. We&apos;ll get back to you promptly.
               </p>
               <div className="mt-4">
                 <Link href="/contact" className="text-sm font-semibold text-slate-900 underline underline-offset-4">
@@ -108,8 +107,8 @@ export default function HomePage() {
         <div className="container">
           <SectionIntro
             eyebrow="Core Service and Installation"
-            title="Clear service paths for homeowners, businesses, and property managers"
-            description="The homepage should quickly show what Park Group does and where to go next. These service sections give visitors a clearer route to HVAC, gas, and commercial information."
+            title="HVAC, gas, residential, and commercial service — all under one roof"
+            description="Park Group handles the full range of heating, cooling, gas, and mechanical service needs for homeowners, businesses, and property managers across the Hamilton area."
           />
           <ServiceCards />
         </div>
@@ -121,18 +120,18 @@ export default function HomePage() {
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Residential and commercial</p>
             <h2 className="mt-3 text-2xl font-bold">Support for everyday service needs and larger mechanical requirements</h2>
             <p className="mt-4 text-slate-600">
-              The redesigned site should make it clear that Park Group can support both homeowners and commercial
-              clients. That includes repair work, system replacements, gas-related service, and
-              ongoing maintenance requirements.
+              Park Group supports both homeowners and commercial clients with repairs, system replacements,
+              gas service, and ongoing maintenance. Whatever the job, the focus is on quality workmanship
+              and clear communication from start to finish.
             </p>
           </div>
 
           <div className="card p-8">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Fast contact and lead capture</p>
-            <h2 className="mt-3 text-2xl font-bold">Make it easy for customers to call, request service, or ask for a quote</h2>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Easy to reach</p>
+            <h2 className="mt-3 text-2xl font-bold">Get in touch quickly — by phone, email, or online form</h2>
             <p className="mt-4 text-slate-600">
-              A stronger homepage should move visitors toward action. Prominent phone links, contact forms,
-              and quote-focused calls to action help turn website traffic into real service inquiries.
+              Call, email, or submit a service request online. Park Group will follow up promptly to help
+              you find the right solution for your home or business.
             </p>
           </div>
         </div>
