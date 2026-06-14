@@ -67,14 +67,32 @@ function ProductIcon({ id }: { id: ProductId }) {
   }
 }
 
+type SubmittedData = {
+  name: string;
+  phone: string;
+  email: string;
+  service: string;
+  address: string;
+  preferredContact: string;
+  message: string;
+  products: string;
+};
+
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [selectedProducts, setSelectedProducts] = useState<ProductId[]>([]);
+  const [submittedData, setSubmittedData] = useState<SubmittedData | null>(null);
 
   function toggleProduct(id: ProductId) {
     setSelectedProducts((prev) =>
       prev.includes(id) ? prev.filter((p) => p !== id) : [...prev, id]
     );
+  }
+
+  function handleReset() {
+    setStatus('idle');
+    setSubmittedData(null);
+    setSelectedProducts([]);
   }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -90,7 +108,7 @@ export function ContactForm() {
               .map((id) => PRODUCTS.find((p) => p.id === id)?.label)
               .join(', ')
           : 'None selected',
-    };
+    } as SubmittedData;
 
     try {
       const response = await fetch('/api/contact', {
@@ -100,9 +118,8 @@ export function ContactForm() {
       });
 
       if (response.ok) {
+        setSubmittedData(payload);
         setStatus('success');
-        event.currentTarget.reset();
-        setSelectedProducts([]);
         return;
       }
 
@@ -110,6 +127,80 @@ export function ContactForm() {
     } catch {
       setStatus('error');
     }
+  }
+
+  if (status === 'success' && submittedData) {
+    return (
+      <div className="card grid gap-6 p-6 md:p-8">
+        <div className="flex items-start gap-4">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-100">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-green-600">
+              <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
+            </svg>
+          </span>
+          <div>
+            <h2 className="text-2xl font-bold text-slate-900">Request submitted</h2>
+            <p className="mt-1 text-sm leading-7 text-slate-600">
+              Once email delivery is configured, the following would be sent to Park Group.
+            </p>
+          </div>
+        </div>
+
+        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 font-mono text-sm text-slate-700">
+          <p className="text-xs font-bold uppercase tracking-widest text-slate-400 not-italic" style={{fontFamily: 'inherit'}}>
+            To: contact@parkgroupofcompanies.com
+          </p>
+          <p className="text-xs font-bold uppercase tracking-widest text-slate-400 not-italic mt-0.5" style={{fontFamily: 'inherit'}}>
+            Subject: New Service Request — {submittedData.name}
+          </p>
+
+          <div className="mt-5 border-t border-slate-200 pt-5 grid gap-4">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-amber-600 not-italic" style={{fontFamily: 'inherit'}}>Equipment Selected</p>
+              <p className="mt-1">{submittedData.products}</p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-amber-600 not-italic" style={{fontFamily: 'inherit'}}>Name</p>
+                <p className="mt-1">{submittedData.name}</p>
+              </div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-amber-600 not-italic" style={{fontFamily: 'inherit'}}>Phone</p>
+                <p className="mt-1">{submittedData.phone}</p>
+              </div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-amber-600 not-italic" style={{fontFamily: 'inherit'}}>Email</p>
+                <p className="mt-1">{submittedData.email}</p>
+              </div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-amber-600 not-italic" style={{fontFamily: 'inherit'}}>Preferred Contact</p>
+                <p className="mt-1">{submittedData.preferredContact}</p>
+              </div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-amber-600 not-italic" style={{fontFamily: 'inherit'}}>Service Needed</p>
+                <p className="mt-1">{submittedData.service}</p>
+              </div>
+              {submittedData.address && (
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-amber-600 not-italic" style={{fontFamily: 'inherit'}}>Service Address</p>
+                  <p className="mt-1">{submittedData.address}</p>
+                </div>
+              )}
+            </div>
+
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-amber-600 not-italic" style={{fontFamily: 'inherit'}}>Message</p>
+              <p className="mt-1 whitespace-pre-wrap">{submittedData.message}</p>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" onClick={handleReset} className="btn-secondary w-full sm:w-fit">
+          Submit Another Request
+        </button>
+      </div>
+    );
   }
 
   return (
@@ -121,12 +212,12 @@ export function ContactForm() {
         </p>
       </div>
 
-      <div className="rounded-2xl bg-slate-900 p-5">
-        <p className="text-xs font-bold uppercase tracking-[0.15em] text-amber-400">Step 1</p>
-        <p className="mt-1 text-base font-semibold text-white">
+      <div>
+        <p className="text-xs font-bold uppercase tracking-[0.15em] text-amber-600">Step 1</p>
+        <p className="mt-1 text-base font-semibold text-slate-900">
           What equipment can we help you with?
         </p>
-        <p className="mt-0.5 text-sm text-slate-400">Select all that apply.</p>
+        <p className="mt-0.5 text-sm text-slate-500">Select all that apply.</p>
 
         <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {PRODUCTS.map((product) => {
@@ -139,10 +230,9 @@ export function ContactForm() {
                 className={`group relative flex flex-col items-center gap-3 rounded-2xl px-3 py-5 text-center transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${
                   selected
                     ? 'bg-amber-500 shadow-lg shadow-amber-500/30'
-                    : 'bg-[#0f3b73] shadow-md shadow-black/20 hover:bg-[#164494] hover:shadow-lg'
+                    : 'bg-gradient-to-br from-sky-300 to-sky-700 shadow-md shadow-black/20 hover:shadow-lg hover:brightness-110'
                 }`}
               >
-                {/* Check indicator */}
                 <span
                   className={`absolute right-2.5 top-2.5 flex h-5 w-5 items-center justify-center rounded-full border-2 transition-all duration-150 ${
                     selected
@@ -157,7 +247,6 @@ export function ContactForm() {
                   )}
                 </span>
 
-                {/* Icon container */}
                 <span
                   className={`flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-150 ${
                     selected
@@ -181,9 +270,9 @@ export function ContactForm() {
         </div>
 
         {selectedProducts.length > 0 && (
-          <p className="mt-3 text-xs text-slate-400">
+          <p className="mt-3 text-xs text-slate-500">
             Selected:{' '}
-            <span className="font-medium text-amber-400">
+            <span className="font-medium text-amber-600">
               {selectedProducts.map((id) => PRODUCTS.find((p) => p.id === id)?.label).join(', ')}
             </span>
           </p>
@@ -194,6 +283,22 @@ export function ContactForm() {
         <div className="h-px flex-1 bg-slate-200" />
         <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-400">Step 2 — Your details</p>
         <div className="h-px flex-1 bg-slate-200" />
+      </div>
+
+      <div className="grid grid-cols-2 gap-3">
+        {[
+          'The type of service you need',
+          'Your location or service address',
+          'A short description of the issue or project',
+          'The best way to reach you',
+        ].map((item, index) => (
+          <div key={item} className="flex gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500 text-xs font-bold text-slate-900">
+              {index + 1}
+            </span>
+            <p className="text-sm leading-6 text-slate-600">{item}</p>
+          </div>
+        ))}
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
@@ -286,21 +391,17 @@ export function ContactForm() {
         By submitting this form, you are asking Park Group to contact you regarding your service request.
       </p>
 
-      <button type="submit" className="btn-primary w-full sm:w-fit" disabled={status === 'loading'}>
-        {status === 'loading' ? 'Sending...' : 'Send Request'}
-      </button>
+      <div className="flex flex-wrap items-center gap-4">
+        <button type="submit" className="btn-primary w-full sm:w-fit" disabled={status === 'loading'}>
+          {status === 'loading' ? 'Sending...' : 'Send Request'}
+        </button>
 
-      {status === 'success' && (
-        <p className="text-sm font-medium text-green-700">
-          Thanks. Your request was submitted successfully.
-        </p>
-      )}
-
-      {status === 'error' && (
-        <p className="text-sm font-medium text-red-700">
-          Something went wrong. Please try again or contact us by phone.
-        </p>
-      )}
+        {status === 'error' && (
+          <p className="text-sm font-medium text-red-700">
+            Something went wrong. Please try again or contact us by phone.
+          </p>
+        )}
+      </div>
     </form>
   );
 }

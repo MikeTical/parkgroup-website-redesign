@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { HeroButtons } from '@/components/HeroButtons';
 
 export const metadata: Metadata = {
   title: 'Gas Services',
@@ -59,17 +60,7 @@ export default function GasPage() {
               with a focus on safety, code compliance, and reliable results.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/contact" className="btn-primary">
-                Request Gas Service
-              </Link>
-              <a
-                href="tel:905-572-7275"
-                className="btn-secondary border border-white/20 bg-transparent text-white hover:bg-white/10"
-              >
-                Call Now
-              </a>
-            </div>
+            <HeroButtons />
           </div>
         </div>
       </section>

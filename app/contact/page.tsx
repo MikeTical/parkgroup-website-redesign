@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ContactForm } from '@/components/ContactForm';
 import { siteConfig } from '@/lib/site';
+import { HeroButtons } from '@/components/HeroButtons';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -20,33 +21,7 @@ export default function ContactPage() {
           <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
             Fill out the form below and our team will follow up promptly. Or reach us directly by phone or email.
           </p>
-          <div className="mt-6 flex flex-wrap gap-8 text-sm">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Phone</p>
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="mt-1 block font-semibold text-white transition hover:text-amber-400"
-              >
-                {siteConfig.phoneDisplay}
-              </a>
-            </div>
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Email</p>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="mt-1 block font-semibold text-white transition hover:text-amber-400"
-              >
-                {siteConfig.email}
-              </a>
-            </div>
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Address</p>
-              <p className="mt-1 font-semibold text-white">
-                {siteConfig.address.streetAddress}, {siteConfig.address.addressLocality},{' '}
-                {siteConfig.address.addressRegion}
-              </p>
-            </div>
-          </div>
+          <HeroButtons />
         </div>
       </section>
 
@@ -60,25 +35,6 @@ export default function ContactPage() {
                 Park Group serves customers in{' '}
                 {siteConfig.serviceAreas.join(', ')} and surrounding communities.
               </p>
-            </div>
-
-            <div className="rounded-2xl bg-slate-900 p-5">
-              <p className="text-xs font-bold uppercase tracking-[0.15em] text-amber-400">What to include</p>
-              <div className="mt-3 grid gap-3">
-                {[
-                  'The type of service you need',
-                  'Your location or service address',
-                  'A short description of the issue or project',
-                  'The best way to reach you',
-                ].map((item, index) => (
-                  <div key={item} className="flex gap-4 rounded-2xl border border-sky-400/30 bg-gradient-to-br from-sky-300 to-sky-700 p-4">
-                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-500 text-xs font-bold text-slate-900">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                    <p className="text-sm leading-7 text-white">{item}</p>
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="rounded-2xl bg-slate-900 p-6 text-white">
