@@ -24,6 +24,8 @@ export default function HomePage() {
   return (
     <>
       <section className="bg-slate-950 text-white">
+        <PlaceholderImage label="Full-width hero banner photo" aspect="aspect-[3/1]" className="w-full rounded-none border-x-0" />
+
         <div className="container grid gap-12 py-20 md:grid-cols-[1.15fr_0.85fr] md:py-28">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-400">

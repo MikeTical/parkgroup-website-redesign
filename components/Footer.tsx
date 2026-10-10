@@ -5,7 +5,7 @@ import { siteConfig } from '@/lib/site';
 export function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-slate-50">
-      <div className="container grid gap-10 py-12 md:grid-cols-[1fr_1fr_0.8fr]">
+      <div className="container grid gap-10 py-12 md:grid-cols-3 md:items-start">
         <div>
           <div className="relative h-20 w-[280px] sm:h-24 sm:w-[340px]">
             <Image
@@ -16,28 +16,8 @@ export function Footer() {
               sizes="(max-width: 640px) 280px, 340px"
             />
           </div>
-        </div>
 
-        <div>
-          <h3 className="text-sm font-bold uppercase tracking-wide text-slate-900">Contact</h3>
-          <div className="mt-4 grid gap-4 text-sm leading-7 text-slate-600 sm:grid-cols-2">
-            <p>
-              {siteConfig.address.streetAddress}
-              <br />
-              {siteConfig.address.addressLocality}, {siteConfig.address.addressRegion} {siteConfig.address.postalCode}
-            </p>
-            <p>
-              <a className="font-medium text-slate-900 transition hover:text-amber-600" href={`tel:${siteConfig.phone}`}>
-                {siteConfig.phoneDisplay}
-              </a>
-              <br />
-              <a className="font-medium text-slate-900 transition hover:text-amber-600" href={`mailto:${siteConfig.email}`}>
-                {siteConfig.email}
-              </a>
-            </p>
-          </div>
-
-          <div className="mt-6 flex gap-4">
+          <div className="mt-6 flex items-center gap-4">
             <a
               href={siteConfig.social.instagram}
               target="_blank"
@@ -60,6 +40,29 @@ export function Footer() {
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
               </svg>
             </a>
+          </div>
+        </div>
+
+        <div className="min-w-0">
+          <h3 className="text-sm font-bold uppercase tracking-wide text-slate-900">Contact</h3>
+          <div className="mt-4 flex flex-col gap-4 text-sm leading-7 text-slate-600">
+            <p className="min-w-0">
+              {siteConfig.address.streetAddress}
+              <br />
+              {siteConfig.address.addressLocality}, {siteConfig.address.addressRegion} {siteConfig.address.postalCode}
+            </p>
+            <p className="min-w-0">
+              <a className="font-medium text-slate-900 transition hover:text-amber-600" href={`tel:${siteConfig.phone}`}>
+                {siteConfig.phoneDisplay}
+              </a>
+              <br />
+              <a
+                className="break-words font-medium text-slate-900 transition hover:text-amber-600"
+                href={`mailto:${siteConfig.email}`}
+              >
+                {siteConfig.email}
+              </a>
+            </p>
           </div>
         </div>
 

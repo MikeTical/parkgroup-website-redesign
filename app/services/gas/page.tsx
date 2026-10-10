@@ -8,12 +8,11 @@ export const metadata: Metadata = {
     'Park Group of Companies provides licensed gas fitting, gas line installation and repair, appliance connections, and gas safety inspections for residential and commercial customers in Hamilton and surrounding areas.'
 };
 
-const featuredService = {
-  title: 'Gas Line Installation',
-  description: 'New gas line runs for appliances, generators, outdoor BBQs, pool heaters, renovation & construction work, and building additions — installed to code by licensed gas fitters with permits where required.'
-};
-
 const serviceItems = [
+  {
+    title: 'Gas Line Installation',
+    description: 'New gas line runs for appliances, generators, outdoor BBQs, pool heaters, renovation & construction work, and building additions — installed to code by licensed gas fitters with permits where required.'
+  },
   {
     title: 'Gas Line Repair',
     description: 'Diagnosis and repair of gas leaks, corroded or damaged lines, faulty fittings, and pressure issues to restore safe, reliable operation as quickly as possible.'
@@ -70,13 +69,7 @@ export default function GasPage() {
             </p>
           </div>
 
-          <div className="mt-10 rounded-3xl border border-amber-200 bg-amber-50 p-8">
-            <p className="text-xs font-bold uppercase tracking-[0.15em] text-amber-600">Most requested</p>
-            <h3 className="mt-2 text-2xl font-bold text-slate-900">{featuredService.title}</h3>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-700">{featuredService.description}</p>
-          </div>
-
-          <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {serviceItems.map((item) => (
               <div key={item.title} className="card p-6">
                 <div className="mb-4 h-1.5 w-10 rounded-full bg-amber-500" />

@@ -46,7 +46,7 @@ export function Header() {
 
         <button
           type="button"
-          className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-800 md:hidden"
+          className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-800 lg:hidden"
           onClick={() => setOpen(!open)}
           aria-expanded={open}
           aria-label="Toggle navigation"
@@ -54,18 +54,18 @@ export function Header() {
           {open ? 'Close' : 'Menu'}
         </button>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-5 lg:flex">
           {filteredNavItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-[15px] font-semibold text-slate-700 transition hover:text-slate-900"
+              className="shrink-0 text-[15px] font-semibold text-slate-700 transition hover:text-slate-900"
             >
               {item.label}
             </Link>
           ))}
 
-          <div className="flex items-center gap-3 border-l border-slate-200 pl-5">
+          <div className="flex shrink-0 items-center gap-3 border-l border-slate-200 pl-5">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
@@ -82,14 +82,14 @@ export function Header() {
             ))}
           </div>
 
-          <Link href="/contact" className="btn-primary px-5 py-3 text-sm">
+          <Link href="/contact" className="btn-primary shrink-0 px-5 py-3 text-sm">
             Book Service | Request a Quote
           </Link>
         </nav>
       </div>
 
       {open && (
-        <nav className="border-t border-slate-200 bg-white md:hidden">
+        <nav className="border-t border-slate-200 bg-white lg:hidden">
           <div className="container flex flex-col py-3">
             {filteredNavItems.map((item) => (
               <Link
