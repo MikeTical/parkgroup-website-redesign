@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { HeroButtons } from '@/components/HeroButtons';
+import { siteConfig } from '@/lib/site';
+import { PlaceholderImage } from '@/components/PlaceholderImage';
+import { PlaceholderLogoRow } from '@/components/PlaceholderLogoRow';
+import { Testimonials } from '@/components/Testimonials';
 
 export const metadata: Metadata = {
   title: 'Commercial & Industrial Services',
@@ -44,6 +47,15 @@ const commonNeeds = [
   'Your industrial heating system needs inspection, repair, or an upgrade'
 ];
 
+const industriesServed = [
+  'Retail & Office Buildings',
+  'Warehouses & Distribution',
+  'Restaurants & Commercial Kitchens',
+  'Light Manufacturing',
+  'Property Management',
+  '[confirm: additional industries served]'
+];
+
 export default function CommercialPage() {
   return (
     <>
@@ -52,15 +64,14 @@ export default function CommercialPage() {
           <div className="max-w-4xl">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-400">Commercial & Industrial</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">
-              Mechanical service support for facilities and businesses.
+              Professional mechanical services designed to keep your facility running smoothly.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-              Park Group provides commercial and industrial HVAC, gas, and mechanical service for businesses,
-              facilities, and larger operating environments across the Hamilton area. The focus is on minimizing
-              downtime, maintaining performance, and responding effectively when equipment needs attention.
+              Park Group supports commercial and industrial operations with dependable HVAC, gas and
+              mechanical expertise. From routine maintenance and equipment issues to larger system needs,
+              our team works to minimize disruptions, maintain reliable performance, and keep your facility
+              operating as it should.
             </p>
-
-            <HeroButtons />
           </div>
         </div>
       </section>
@@ -68,13 +79,14 @@ export default function CommercialPage() {
       <section className="section">
         <div className="container">
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">What we handle</p>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Supporting your operations</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-              Commercial and industrial service capabilities
+              Built for commercial and industrial operations
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600">
-              From routine maintenance to emergency repairs and larger installations, Park Group supports
-              commercial and industrial clients with the mechanical service expertise their environments require.
+              From preventative maintenance and responsive repairs to complex installations and system
+              upgrades, Park Group brings the experience and technical expertise needed to keep demanding
+              commercial and industrial environments operating reliably.
             </p>
           </div>
 
@@ -118,24 +130,76 @@ export default function CommercialPage() {
         </div>
       </section>
 
+      <section className="section">
+        <div className="container max-w-3xl">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">When your operations need attention</p>
+          <p className="mt-4 text-base leading-8 text-slate-600">
+            In commercial and industrial environments, even minor issues can impact productivity and
+            day-to-day operations. Whether you&apos;re dealing with an unexpected problem, declining system
+            performance, or an ongoing maintenance need, Park Group responds with the experience and
+            expertise to get things back on track.
+          </p>
+        </div>
+      </section>
+
       <section className="section bg-slate-50">
-        <div className="container rounded-3xl border border-slate-200 bg-white p-8 md:p-12">
+        <div className="container grid gap-8 md:grid-cols-2 md:items-center">
+          <PlaceholderImage label="Commercial work photo" aspect="aspect-[4/3]" />
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Industries we service</p>
+            <h2 className="mt-3 text-2xl font-bold text-slate-900">A maintenance partner built for your facility</h2>
+            <p className="mt-4 text-slate-600">
+              Scheduled preventative maintenance keeps equipment running efficiently and catches small issues
+              before they become costly downtime. Park Group works with facility managers to build a
+              maintenance schedule that fits the building and how it&apos;s used.
+            </p>
+            <ul className="mt-4 grid gap-2 text-sm leading-7 text-slate-600 sm:grid-cols-2">
+              {industriesServed.map((industry) => (
+                <li key={industry} className="flex items-start gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
+                  {industry}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <Testimonials eyebrow="What clients say" title="A couple of recent commercial reviews" />
+        </div>
+      </section>
+
+      <section className="section bg-slate-50">
+        <div className="container">
+          <PlaceholderLogoRow label="Some of the businesses we work with" count={5} />
+        </div>
+      </section>
+
+      <section className="section bg-slate-950 text-white">
+        <div className="container rounded-3xl border border-white/10 bg-white/5 p-8 md:p-12">
           <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Talk to Park Group</p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-                Need commercial or industrial service?
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-400">Connect with Park Group</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
+                Let&apos;s keep your operation running
               </h2>
-              <p className="mt-4 max-w-2xl text-slate-600">
-                Contact Park Group for commercial HVAC, gas, radiant heating, rooftop equipment, or mechanical service support.
+              <p className="mt-4 max-w-2xl text-slate-300">
+                Whether you need HVAC or mechanical repairs, gas service, radiant heating, rooftop equipment
+                support, or help planning your next system upgrade, Park Group has the expertise to get the
+                job done.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-4">
               <Link href="/contact" className="btn-primary">
-                Request Service
+                Request Commercial Service | Discuss A Project
               </Link>
-              <a href="tel:905-572-7275" className="btn-secondary">
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="btn-secondary border border-white/20 bg-transparent text-white hover:bg-white/10"
+              >
                 Call Now
               </a>
             </div>

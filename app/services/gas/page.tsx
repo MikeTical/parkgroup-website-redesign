@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { HeroButtons } from '@/components/HeroButtons';
+import { PlaceholderLogoRow } from '@/components/PlaceholderLogoRow';
 
 export const metadata: Metadata = {
   title: 'Gas Services',
@@ -8,11 +8,12 @@ export const metadata: Metadata = {
     'Park Group of Companies provides licensed gas fitting, gas line installation and repair, appliance connections, and gas safety inspections for residential and commercial customers in Hamilton and surrounding areas.'
 };
 
+const featuredService = {
+  title: 'Gas Line Installation',
+  description: 'New gas line runs for appliances, generators, outdoor BBQs, pool heaters, renovation & construction work, and building additions — installed to code by licensed gas fitters with permits where required.'
+};
+
 const serviceItems = [
-  {
-    title: 'Gas Line Installation',
-    description: 'New gas line runs for appliances, generators, outdoor BBQs, pool heaters, and building additions — installed to code by licensed gas fitters with permits where required.'
-  },
   {
     title: 'Gas Line Repair',
     description: 'Diagnosis and repair of gas leaks, corroded or damaged lines, faulty fittings, and pressure issues to restore safe, reliable operation as quickly as possible.'
@@ -35,15 +36,6 @@ const serviceItems = [
   }
 ];
 
-const commonNeeds = [
-  'You smell gas or suspect a leak in your home or building',
-  'You are adding a gas appliance and need a new line run',
-  'Your gas pressure seems low or inconsistent',
-  'You are renovating and need gas lines relocated or extended',
-  'A gas appliance needs to be disconnected or reconnected safely',
-  'You need a gas inspection or pressure test for insurance or resale'
-];
-
 export default function GasPage() {
   return (
     <>
@@ -52,7 +44,7 @@ export default function GasPage() {
           <div className="max-w-4xl">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-400">Gas Services</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">
-              Licensed gas fitting for homes and businesses.
+              Safe. Professional. Licensed gas services for your home or business.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
               Park Group provides gas line installation, repair, and appliance connections for residential and
@@ -78,7 +70,13 @@ export default function GasPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-10 rounded-3xl border border-amber-200 bg-amber-50 p-8">
+            <p className="text-xs font-bold uppercase tracking-[0.15em] text-amber-600">Most requested</p>
+            <h3 className="mt-2 text-2xl font-bold text-slate-900">{featuredService.title}</h3>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-700">{featuredService.description}</p>
+          </div>
+
+          <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {serviceItems.map((item) => (
               <div key={item.title} className="card p-6">
                 <div className="mb-4 h-1.5 w-10 rounded-full bg-amber-500" />
@@ -98,14 +96,22 @@ export default function GasPage() {
               Common reasons customers contact us for gas work
             </h2>
             <p className="mt-4 max-w-xl text-base leading-8 text-slate-600">
-              Gas issues should always be handled by a licensed professional. If you are unsure whether
-              something needs attention, it is always safer to have it checked.
+              Smell rotten eggs or suspect a gas leak? Don&apos;t attempt to locate or repair the issue yourself.
+              For your safety, leave the area immediately. Gas issues should always be taken care of by a
+              licensed professional who can inspect and repair the issue immediately.
             </p>
           </div>
 
           <div className="rounded-3xl bg-slate-900 p-6 md:p-8">
             <div className="grid gap-3 sm:grid-cols-2">
-              {commonNeeds.map((item, index) => (
+              {[
+                'You smell gas or suspect a leak in your home or building',
+                'You are adding a gas appliance and need a new line run',
+                'Your gas pressure seems low or inconsistent',
+                'You are renovating and need gas lines relocated or extended',
+                'A gas appliance needs to be disconnected or reconnected safely',
+                'You need a gas inspection or pressure test for insurance or resale'
+              ].map((item, index) => (
                 <div key={item} className="flex gap-4 rounded-2xl border border-sky-400/30 bg-gradient-to-br from-sky-300 to-sky-700 p-5">
                   <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-500 text-xs font-bold text-slate-900">
                     {String(index + 1).padStart(2, '0')}
@@ -120,26 +126,26 @@ export default function GasPage() {
 
       <section className="section bg-slate-50">
         <div className="container rounded-3xl border border-slate-200 bg-white p-8 md:p-12">
-          <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Talk to Park Group</p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-                Need gas service or a licensed gas fitter?
-              </h2>
-              <p className="mt-4 max-w-2xl text-slate-600">
-                Contact Park Group for gas line installation, repairs, appliance connections, or safety inspections.
-              </p>
-            </div>
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Trust</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+            Gas work isn&apos;t a DIY job
+          </h2>
+          <p className="mt-4 max-w-2xl text-slate-600">
+            Gas equipment and piping must be installed and serviced correctly to protect your home, your
+            family, your property or your employees and business. Our technicians follow Ontario applicable
+            code and manufacturer requirements to ensure your gas equipment is installed safely and operates
+            properly.
+          </p>
+          <ul className="mt-6 grid gap-2 text-sm font-semibold text-slate-500 italic sm:grid-cols-2">
+            <li>[confirm: G1/G2 gas technician certification to display]</li>
+            <li>[confirm: TSSA registration details to display]</li>
+          </ul>
+        </div>
+      </section>
 
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="btn-primary">
-                Request Service
-              </Link>
-              <a href="tel:905-572-7275" className="btn-secondary">
-                Call Now
-              </a>
-            </div>
-          </div>
+      <section className="section">
+        <div className="container">
+          <PlaceholderLogoRow label="Equipment brands we install and service" count={5} />
         </div>
       </section>
     </>

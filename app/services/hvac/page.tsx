@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { HeroButtons } from '@/components/HeroButtons';
+import { PlaceholderImage } from '@/components/PlaceholderImage';
+import { PlaceholderLogoRow } from '@/components/PlaceholderLogoRow';
 
 export const metadata: Metadata = {
   title: 'HVAC Services',
@@ -48,20 +48,20 @@ export default function HVACPage() {
   return (
     <>
       <section className="bg-slate-950 text-white">
-        <div className="container py-20 md:py-28">
-          <div className="max-w-4xl">
+        <div className="container grid gap-10 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-28">
+          <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-400">HVAC Services</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">
-              HVAC service for residential and commercial properties.
+              Trusted HVAC services for residential & commercial properties.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-              Park Group provides heating and cooling service for homes, businesses, and facilities across
-              the Hamilton area. From repairs and maintenance to equipment upgrades and replacements, the
-              focus is on clear communication, quality workmanship, and systems that operate the way they should.
+              Providing reliable heating and cooling solutions for homes, businesses and commercial
+              facilities throughout the Hamilton area. From routine maintenance and repairs to system
+              upgrades and complete equipment replacements, we deliver dependable workmanship,
+              straightforward service, and HVAC solutions built for lasting comfort and performance.
             </p>
-
-            <HeroButtons />
           </div>
+          <PlaceholderImage label="HVAC service photo" aspect="aspect-[4/3]" />
         </div>
       </section>
 
@@ -70,20 +70,25 @@ export default function HVACPage() {
           <div className="max-w-3xl">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">What we handle</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-              Heating and cooling services
+              Year-round comfort solutions
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600">
-              From everyday repairs to planned equipment upgrades, Park Group handles heating and cooling work
-              for homes, businesses, and commercial properties throughout the Hamilton area.
+              Whether it&apos;s restoring comfort when something goes wrong or improving the performance
+              of an existing system, Park Group delivers dependable service with practical solutions
+              built around your needs.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {serviceItems.map((item) => (
-              <div key={item.title} className="card p-6">
-                <div className="mb-4 h-1.5 w-10 rounded-full bg-amber-500" />
-                <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+          <div className="mt-10 divide-y divide-slate-200 border-y border-slate-200">
+            {serviceItems.map((item, index) => (
+              <div key={item.title} className="grid gap-4 py-6 sm:grid-cols-[auto_1fr] sm:items-start sm:gap-8">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-amber-400">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">{item.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -118,28 +123,9 @@ export default function HVACPage() {
         </div>
       </section>
 
-      <section className="section bg-slate-50">
-        <div className="container rounded-3xl border border-slate-200 bg-white p-8 md:p-12">
-          <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Talk to Park Group</p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-                Need HVAC service?
-              </h2>
-              <p className="mt-4 max-w-2xl text-slate-600">
-                Contact Park Group for heating and cooling repairs, maintenance, upgrades, or replacement work.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="btn-primary">
-                Request Service
-              </Link>
-              <a href="tel:905-572-7275" className="btn-secondary">
-                Call Now
-              </a>
-            </div>
-          </div>
+      <section className="section">
+        <div className="container">
+          <PlaceholderLogoRow label="Equipment brands we install and service" count={5} />
         </div>
       </section>
     </>

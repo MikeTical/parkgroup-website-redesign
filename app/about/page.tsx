@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { siteConfig } from '@/lib/site';
-import { HeroButtons } from '@/components/HeroButtons';
+import { PlaceholderImage } from '@/components/PlaceholderImage';
+import { Testimonials } from '@/components/Testimonials';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -9,38 +10,34 @@ export const metadata: Metadata = {
     'Learn more about Park Group of Companies, serving Hamilton, Dundas, Ancaster, Burlington, Stoney Creek, and surrounding areas with HVAC, gas, and commercial mechanical services.'
 };
 
-const values = [
-  {
-    title: 'Residential Service',
-    description: 'Support for homeowners who need dependable help with heating, cooling, gas, hot water, and maintenance-related work across the Hamilton area.'
-  },
-  {
-    title: 'Commercial Capability',
-    description: 'Practical service support for buildings, facilities, and business environments where system performance and reliability matter.'
-  },
-  {
-    title: 'Customer-First Approach',
-    description: 'Clear communication, responsive service, and a focus on doing the job properly from the start — building trust that lasts beyond a single service call.'
-  }
+const whyChooseUs = [
+  { title: 'Licensed & insured technicians', description: '[confirm: licensing details to display]' },
+  { title: 'Background-checked technicians', description: '[confirm: background check policy]' },
+  { title: 'Workmanship warranties', description: '[confirm: warranty terms to display]' },
+  { title: 'Same-day service', description: '[confirm: is same-day service available?]' },
+  { title: '24/7 emergency service', description: '[confirm: is 24/7 emergency service offered?]' },
+  { title: 'Financing options', description: '[confirm: are financing options available?]' },
+  { title: 'Satisfaction guaranteed', description: '[confirm: guarantee wording to display]' }
 ];
 
 export default function AboutPage() {
   return (
     <>
       <section className="bg-slate-950 text-white">
-        <div className="container py-20 md:py-28">
-          <div className="max-w-4xl">
+        <div className="container grid gap-10 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-28">
+          <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-400">About Park Group</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">
-              A dependable mechanical service company for the Hamilton area.
+              Built on Quality. Driven by Service.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-              Park Group of Companies provides HVAC, gas, and commercial mechanical service for residential
-              and commercial customers across the Hamilton region. Built on quality workmanship, honest
-              communication, and long-term customer relationships.
+              Park Group of Companies is a trusted HVAC and mechanical service provider serving
+              residential, commercial and industrial clients. Our reputation is built on skilled
+              workmanship, clear communication, and a commitment to doing the job right — while
+              building lasting relationships with the people and businesses we serve.
             </p>
-            <HeroButtons />
           </div>
+          <PlaceholderImage label="Company photo" aspect="aspect-[4/3]" />
         </div>
       </section>
 
@@ -48,16 +45,14 @@ export default function AboutPage() {
         <div className="container grid gap-6 md:grid-cols-2">
           <div className="card p-8">
             <div className="mb-4 h-1.5 w-10 rounded-full bg-amber-500" />
-            <h2 className="text-2xl font-bold text-slate-900">What Park Group is built on</h2>
+            <h2 className="text-2xl font-bold text-slate-900">The Park Group Difference</h2>
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              Park Group is a trusted local service company focused on quality workmanship, responsive
-              communication, and practical solutions for both everyday service needs and more complex
-              mechanical requirements. Whether the job involves heating, cooling, gas, or commercial
-              equipment, customers can rely on a team that values reliability and professionalism.
+              [Add founding story: how long Park Group has been in business, why the company was
+              started, and the vision behind it.]
             </p>
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              From single-family homes to commercial facilities, Park Group handles the full range of
-              mechanical service needs with the same level of care and attention to detail on every job.
+              [Add a short note on how you want customers to feel when working with Park Group —
+              short, sweet, and simple.]
             </p>
           </div>
 
@@ -69,14 +64,21 @@ export default function AboutPage() {
               The business supports residential service calls, commercial properties, and broader mechanical
               requirements where dependable HVAC and gas expertise are essential.
             </p>
+            <div className="mt-4">
+              <Link href="/contact" className="text-sm font-semibold text-slate-900 underline underline-offset-4">
+                Click here to see what areas we cover →
+              </Link>
+            </div>
 
             <div className="mt-6 rounded-2xl bg-slate-50 p-5">
               <p className="text-xs font-bold uppercase tracking-[0.15em] text-amber-600">Core service focus</p>
               <ul className="mt-3 grid gap-2 text-sm leading-7 text-slate-600">
                 {siteConfig.primaryServices.map((service) => (
-                  <li key={service} className="flex items-start gap-2">
+                  <li key={service.label} className="flex items-start gap-2">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
-                    {service}
+                    <Link href={service.href} className="transition hover:text-amber-600 hover:underline">
+                      {service.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -88,9 +90,9 @@ export default function AboutPage() {
       <section className="section bg-slate-50">
         <div className="container">
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">How we work</p>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Why choose us</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-              Service built around trust and long-term relationships
+              What sets Park Group apart
             </h2>
             <p className="mt-4 text-base leading-8 text-slate-600">
               Every job — whether a routine tune-up or a full system replacement — is approached with the
@@ -98,15 +100,38 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {values.map((item) => (
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {whyChooseUs.map((item) => (
               <div key={item.title} className="card p-6">
                 <div className="mb-4 h-1.5 w-10 rounded-full bg-amber-500" />
-                <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-500 italic">{item.description}</p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Meet the team</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+            The people behind the work
+          </h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {[1, 2, 3].map((placeholder) => (
+              <div key={placeholder} className="card p-6">
+                <PlaceholderImage label="Team headshot" aspect="aspect-square" />
+                <p className="mt-4 text-sm font-semibold text-slate-400">[Name / role / area of expertise]</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-slate-50">
+        <div className="container">
+          <Testimonials eyebrow="What customers say" title="Trusted by homeowners and businesses" />
         </div>
       </section>
 
@@ -124,7 +149,7 @@ export default function AboutPage() {
             </div>
             <div className="flex flex-wrap gap-4">
               <Link href="/contact" className="btn-primary">
-                Request Service
+                Book Service | Request a Quote
               </Link>
               <a
                 href={`tel:${siteConfig.phone}`}

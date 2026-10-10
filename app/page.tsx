@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { SectionIntro } from '@/components/SectionIntro';
 import { ServiceCards } from '@/components/ServiceCards';
 import { HeroButtons } from '@/components/HeroButtons';
+import { PlaceholderImage } from '@/components/PlaceholderImage';
 import { siteConfig } from '@/lib/site';
 
 const reasons = [
@@ -13,6 +14,11 @@ const reasons = [
   'Clear contact options for service calls and quote requests',
 ];
 
+const residentialSupportPoints = [
+  'Repairs, installations, maintenance, and upgrades',
+  'Heating, cooling, gas, and hot water service for your home',
+  'Straightforward communication from first call to finished job'
+];
 
 export default function HomePage() {
   return (
@@ -35,17 +41,6 @@ export default function HomePage() {
             </p>
 
             <HeroButtons />
-
-            <div className="mt-10 grid max-w-2xl gap-4 text-sm text-slate-300 sm:grid-cols-3">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <p className="font-semibold text-white">Residential Service</p>
-                <p className="mt-2">Repairs, installations, maintenance, and upgrades.</p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <p className="font-semibold text-white">Commercial Support</p>
-                <p className="mt-2">Practical service solutions for buildings and facilities.</p>
-              </div>
-            </div>
           </div>
 
           <div className="card p-6 text-slate-900 md:p-8">
@@ -57,7 +52,9 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <div className="mt-8 rounded-2xl bg-slate-100 p-5">
+            <PlaceholderImage label="Company photo" aspect="aspect-[16/9]" className="mt-6" />
+
+            <div className="mt-6 rounded-2xl bg-slate-100 p-5">
               <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Need service now?</p>
               <p className="mt-2 text-sm leading-7 text-slate-600">
                 Call us directly or use the contact form to request service, get a quote, or ask a question. We&apos;ll get back to you promptly.
@@ -80,28 +77,39 @@ export default function HomePage() {
             description="Park Group handles the full range of heating, cooling, gas, and mechanical service needs for homeowners, businesses, and property managers across the Hamilton area."
           />
           <ServiceCards />
+
+          <div className="card mt-8 p-8">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Residential support</p>
+            <h2 className="mt-3 text-2xl font-bold">Everyday home comfort, covered</h2>
+            <ul className="mt-4 grid gap-2 text-sm leading-7 text-slate-600 sm:grid-cols-3">
+              {residentialSupportPoints.map((point) => (
+                <li key={point} className="flex items-start gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
+      {/* Featured/seasonal highlight — swap this content roughly every 3 months to keep the homepage fresh. */}
       <section className="section bg-slate-50">
-        <div className="container grid gap-8 md:grid-cols-2">
-          <div className="card p-8">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Residential and commercial</p>
-            <h2 className="mt-3 text-2xl font-bold">Support for everyday service needs and larger mechanical requirements</h2>
+        <div className="container grid gap-8 md:grid-cols-2 md:items-center">
+          <PlaceholderImage label="Featured product photo" aspect="aspect-[4/3]" />
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Featured service</p>
+            <h2 className="mt-3 text-2xl font-bold">Ceiling-mounted infrared patio heating</h2>
             <p className="mt-4 text-slate-600">
-              Park Group supports both homeowners and commercial clients with repairs, system replacements,
-              gas service, and ongoing maintenance. Whatever the job, the focus is on quality workmanship
-              and clear communication from start to finish.
+              Extend your outdoor season with ceiling-mounted infrared patio heaters — a popular upgrade for
+              decks, patios, and covered outdoor spaces. Park Group handles the gas line and installation work
+              from start to finish.
             </p>
-          </div>
-
-          <div className="card p-8">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-amber-600">Easy to reach</p>
-            <h2 className="mt-3 text-2xl font-bold">Get in touch quickly — by phone, email, or online form</h2>
-            <p className="mt-4 text-slate-600">
-              Call, email, or submit a service request online. Park Group will follow up promptly to help
-              you find the right solution for your home or business.
-            </p>
+            <div className="mt-4">
+              <Link href="/services/residential" className="text-sm font-semibold text-slate-900 underline underline-offset-4">
+                See residential service details →
+              </Link>
+            </div>
           </div>
         </div>
       </section>

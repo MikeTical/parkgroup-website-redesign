@@ -54,7 +54,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       ...siteConfig.address
     },
     areaServed: siteConfig.serviceAreas,
-    serviceType: siteConfig.primaryServices
+    serviceType: siteConfig.primaryServices.map((service) => service.label)
   };
 
   return (

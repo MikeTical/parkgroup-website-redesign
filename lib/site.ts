@@ -14,13 +14,19 @@ export const siteConfig = {
   },
   serviceAreas: ['Hamilton', 'Dundas', 'Ancaster', 'Burlington', 'Stoney Creek', 'Binbrook'],
   primaryServices: [
-    'HVAC installation and repair',
-    'Air conditioning service',
-    'Heating service',
-    'Gas fitting',
-    'Commercial mechanical service',
-    'Radiant heating solutions'
-  ]
+    { label: 'HVAC installation and repair', href: '/services/hvac' },
+    { label: 'Air conditioning service', href: '/services/hvac' },
+    { label: 'Heating service', href: '/services/hvac' },
+    { label: 'Gas fitting', href: '/services/gas' },
+    { label: 'Commercial mechanical service', href: '/services/commercial' },
+    { label: 'Radiant heating solutions', href: '/services/commercial' }
+  ],
+  // LinkedIn pending a confirmed company page URL from the client.
+  social: {
+    facebook: 'https://www.facebook.com/share/1B1SgaQ3So/?mibextid=wwXIfr',
+    instagram: 'https://www.instagram.com/parkgroupofcompanies?igsh=MTZ5cm13YnY1c3ZnZA==',
+    linkedin: '#'
+  }
 };
 
 export const navItems = [
